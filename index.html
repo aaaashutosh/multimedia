@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Aashutosh Khatiwada</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Academic Blue */
+            --accent-color: #3498db; /* Digital Blue */
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-light: #666666;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-hover: 0 10px 15px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Typography Override for Body Text */
+        p {
+            font-family: 'Lora', serif;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        header {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, var(--primary-color), #34495e);
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-family: 'Montserrat', sans-serif; /* Keep headers sans */
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        header .tagline {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border-top: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Card Type Styling */
+        .card.doc { border-top-color: #2b5797; } /* Word Blue */
+        .card.vid { border-top-color: #e67e22; } /* Video Orange */
+        .card.ppt { border-top-color: #c0392b; } /* PPT Red */
+        .card.img { border-top-color: #27ae60; } /* Image Green */
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .doc .card-icon { color: #2b5797; }
+        .vid .card-icon { color: #e67e22; }
+        .ppt .card-icon { color: #c0392b; }
+        .img .card-icon { color: #27ae60; }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+            transition: background 0.2s;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .card-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* Simplified for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Aashutosh Khatiwada</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="https://github.com/aaaashutosh/multimedia.git" target="_blank" rel="noopener noreferrer">Github link</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Resources</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Aashutosh Khatiwada</h1>
+        <p>BICTE Student | 7th Semester</p>
+        <div class="tagline">Multimedia in Education Portfolio</div>
+    </header>
+
+    <div class="container">
+        
+        <section id="about" style="margin-bottom: 4rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <h2 class="section-title">Academic Profile</h2>
+            <p style="font-size: 1.1rem;">
+                Welcome to my digital portfolio. As a 7th Semester BICTE student, this collection represents my work in integrating Multimedia technologies into educational frameworks. Below you will find lesson plans, audio/visual projects, and flowcharts designed to enhance the learning experience.
+            </p>
+        </section>
+
+        <section id="portfolio">
+            <h2 class="section-title">Multimedia Resources</h2>
+            <div class="portfolio-grid">
+
+                <div class="card doc">
+                    <div class="card-icon"><i class="fa-solid fa-file-word"></i></div>
+                    <h3>Audio Engineering Project</h3>
+                    <p>A comprehensive report detailing the principles of audio engineering applied in an educational context.</p>
+                    <a href="Audio eng project.docx" class="card-btn">Download Document</a>
+                </div>
+
+                <div class="card vid">
+                    <div class="card-icon"><i class="fa-solid fa-circle-play"></i></div>
+                    <h3>Web Technology Explainer</h3>
+                    <p>An animated video introduction to modern web technologies and their evolution.</p>
+                    <a href="#" class="card-btn">Watch Video</a>
+                </div>
+
+                <div class="card vid">
+                    <div class="card-icon"><i class="fa-solid fa-film"></i></div>
+                    <h3>Audio Tools Demo</h3>
+                    <p>A multimedia video demonstration showcasing the practical application of audio editing tools.</p>
+                    <a href="#" class="card-btn">Watch Video</a>
+                </div>
+
+                <div class="card img">
+                    <div class="card-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                    <h3>Lesson Plan Flowchart</h3>
+                    <p>Visual workflow illustrating the instructional phases and evaluation steps for the Web Technology lesson.</p>
+                    <a href="#" class="card-btn">View Diagram</a>
+                </div>
+
+                <div class="card doc">
+                    <div class="card-icon"><i class="fa-solid fa-file-lines"></i></div>
+                    <h3>Session Plan</h3>
+                    <p>Detailed academic session plan outlining learning objectives, timing, and activities.</p>
+                    <a href="Aaashutosh Session plan.pdf" target="_blank" class="card-btn">View PDF</a>
+                </div>
+
+                <div class="card ppt">
+                    <div class="card-icon"><i class="fa-solid fa-file-powerpoint"></i></div>
+                    <h3>Multimedia Presentation</h3>
+                    <p>Slide deck covering key concepts of multimedia integration in classroom environments.</p>
+                    <a href="multimedia presentaion.pptx" class="card-btn">Download PPT</a>
+                </div>
+
+                <div class="card doc">
+                    <div class="card-icon"><i class="fa-solid fa-circle-question"></i></div>
+                    <h3>Multimedia Q&A</h3>
+                    <p>A curated list of questions and answers regarding multimedia technologies and theories.</p>
+                    <a href="Multimedia qs ans.docx" class="card-btn">Download Q&A</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <p>&copy; 2024 Aashutosh Khatiwada. All Rights Reserved.</p>
+        <p style="opacity: 0.7; font-size: 0.8rem; margin-top: 10px;">Department of Education | BICTE Program</p>
+    </footer>
+
+</body>
+</html>
